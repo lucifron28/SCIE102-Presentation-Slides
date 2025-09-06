@@ -243,77 +243,6 @@ const FactorSelector: React.FC = () => {
   );
 };
 
-// Component for metapopulation diagram
-const MetapopulationDiagram: React.FC = () => {
-  const [selectedPatch, setSelectedPatch] = useState<number | null>(null);
-
-  const patches = [
-    { id: 1, x: 20, y: 40, size: 'large', info: 'Population A: Healthy population with good breeding success' },
-    { id: 2, x: 50, y: 30, size: 'medium', info: 'Population B: Medium-sized population with moderate gene flow' },
-    { id: 3, x: 75, y: 60, size: 'small', info: 'Population C: Smaller population that benefits from immigration' }
-  ];
-
-  return (
-    <div className="bg-purple-100 rounded-xl p-6 border-2 border-purple-300 relative min-h-80 mb-6">
-      <h4 className="text-lg font-bold text-purple-800 mb-4 text-center">Metapopulation Structure</h4>
-      
-      <div className="relative h-60 bg-gradient-to-br from-green-200 to-blue-200 rounded-lg overflow-hidden mb-4">
-        {/* Migration arrows */}
-        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100">
-          <defs>
-            <marker id="arrowhead" markerWidth="10" markerHeight="7" 
-             refX="9" refY="3.5" orient="auto">
-              <polygon points="0 0, 10 3.5, 0 7" fill="#059669" />
-            </marker>
-          </defs>
-          <path d="M 25 45 Q 40 25 45 35" stroke="#059669" strokeWidth="2" 
-                fill="none" markerEnd="url(#arrowhead)" />
-          <path d="M 55 35 Q 70 50 70 55" stroke="#059669" strokeWidth="2" 
-                fill="none" markerEnd="url(#arrowhead)" />
-          <path d="M 70 65 Q 45 75 30 50" stroke="#059669" strokeWidth="2" 
-                fill="none" markerEnd="url(#arrowhead)" />
-        </svg>
-
-        {/* Population patches */}
-        {patches.map((patch) => (
-          <motion.div
-            key={patch.id}
-            className={`absolute bg-green-500 rounded-full flex items-center justify-center font-bold text-white cursor-pointer border-4 border-green-700 ${
-              patch.size === 'large' ? 'w-16 h-16' : 
-              patch.size === 'medium' ? 'w-12 h-12' : 'w-10 h-10'
-            }`}
-            style={{ left: `${patch.x}%`, top: `${patch.y}%` }}
-            onClick={() => setSelectedPatch(selectedPatch === patch.id ? null : patch.id)}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            {patch.id}
-          </motion.div>
-        ))}
-        
-        <div className="absolute top-2 right-2 text-sm text-green-800 bg-white/70 px-2 py-1 rounded">
-          Gene Flow →
-        </div>
-      </div>
-
-      <AnimatePresence>
-        {selectedPatch && (
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            className="mt-4 bg-white/90 backdrop-blur-sm rounded-lg p-3 border border-purple-300"
-          >
-            <p className="text-purple-800 text-sm">
-              {patches.find(p => p.id === selectedPatch)?.info}
-            </p>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-};
-
 // Component for quadrat simulation
 const QuadratSimulation: React.FC = () => {
   const [quadratPlaced, setQuadratPlaced] = useState(false);
@@ -839,7 +768,7 @@ const App: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(1);
   const [showPrompt, setShowPrompt] = useState(false);
   const [pendingSlide, setPendingSlide] = useState<number | null>(null);
-  const totalSlides = 15; // Updated total slides
+  const totalSlides = 16; // Updated total slides (added metapopulation examples slide)
 
   const navigateSlide = useCallback((direction: number) => {
     const newSlide = currentSlide + direction;
@@ -1093,7 +1022,7 @@ const App: React.FC = () => {
                     
                     {/* Biotic Factors Image */}
                     <img 
-                      src="/src/assets/images/biotic-factor.png"
+                      src="/images/biotic-factor.png"
                       alt="Examples of biotic factors: predators, plants, parasites"
                       className="rounded-lg mb-4 w-48 mx-auto"
                     />
@@ -1108,7 +1037,7 @@ const App: React.FC = () => {
                     
                     {/* Abiotic Factors Image */}
                     <img 
-                      src="/src/assets/images/abiotic-factor.png"
+                      src="/images/abiotic-factor.png"
                       alt="Examples of abiotic factors: weather, soil, water, temperature"
                       className="rounded-lg mb-4 w-48 mx-auto"
                     />
@@ -1181,54 +1110,82 @@ const App: React.FC = () => {
                 className="slide-enter"
               >
                 <h1 className="text-5xl font-bold text-white text-center mb-8">
-                  Metapopulations
+                  Metapopulations: Connected Communities
                 </h1>
                 
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 mb-8 border border-white/20 text-center">
-                  <h3 className="text-3xl font-bold text-white mb-4">Definition</h3>
-                  <p className="text-xl text-white/90 leading-relaxed">
-                    Metapopulations include multiple populations of the same species that inhabit <span className="text-yellow-300 font-semibold">distinct areas</span>. 
-                    They continuously exchange members through <span className="text-yellow-300 font-semibold">immigration and emigration</span>.
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 mb-6 border border-white/20 text-center">
+                  <h3 className="text-3xl font-bold text-white mb-4">What is a Metapopulation?</h3>
+                  <p className="text-xl text-white/90 leading-relaxed mb-4">
+                    A metapopulation is a group of <span className="text-yellow-300 font-semibold">spatially separated populations</span> of the same species 
+                    that interact through <span className="text-yellow-300 font-semibold">migration and gene flow</span>.
                   </p>
+                  <div className="bg-gradient-to-r from-pink-400/20 to-purple-400/20 rounded-lg p-4">
+                    <p className="text-white/80 text-lg">
+                      <strong>Key Concept:</strong> Individual populations may go extinct, but the metapopulation persists through 
+                      <span className="text-yellow-300"> recolonization from other patches</span>.
+                    </p>
+                  </div>
                 </div>
 
-                <div className="mb-16">
-                  <MetapopulationDiagram />
+                {/* Key processes - compact version */}
+                <div className="grid md:grid-cols-2 gap-4 mb-6">
+                  <div className="bg-gradient-to-br from-green-400/20 to-emerald-400/20 border border-white/20 rounded-lg p-4">
+                    <h6 className="font-bold text-green-200 mb-2 flex items-center">
+                      <span className="mr-2">🔄</span> Immigration
+                    </h6>
+                    <p className="text-white/80 text-sm">
+                      Movement of individuals <strong>INTO</strong> a population from other areas
+                    </p>
+                  </div>
+                  <div className="bg-gradient-to-br from-blue-400/20 to-cyan-400/20 border border-white/20 rounded-lg p-4">
+                    <h6 className="font-bold text-blue-200 mb-2 flex items-center">
+                      <span className="mr-2">🏃</span> Emigration
+                    </h6>
+                    <p className="text-white/80 text-sm">
+                      Movement of individuals <strong>OUT OF</strong> a population to other areas
+                    </p>
+                  </div>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-6 mb-8">
+                {/* Benefits - simplified and more compact */}
+                <div className="grid md:grid-cols-3 gap-4">
                   {[
                     {
-                      title: 'Genetic Diversity',
+                      title: 'Genetic Rescue',
                       icon: '🧬',
-                      description: 'Migration between populations introduces new genes, increasing overall genetic diversity',
-                      benefit: 'Helps populations adapt to changing environments'
+                      description: 'Migration introduces new genetic variants',
+                      benefit: 'Prevents genetic bottlenecks'
                     },
                     {
-                      title: 'Population Rescue',
+                      title: 'Demographic Rescue',
                       icon: '🆘',
-                      description: 'If one population declines, immigrants from other populations can help it recover',
-                      benefit: 'Prevents local extinctions'
+                      description: 'Immigrants supplement declining populations',
+                      benefit: 'Prevents local extinction'
                     },
                     {
-                      title: 'Colonization',
+                      title: 'Recolonization',
                       icon: '🌱',
-                      description: 'Individuals can establish new populations in previously uninhabited suitable areas',
-                      benefit: 'Expands species range and reduces extinction risk'
+                      description: 'Dispersers establish new populations',
+                      benefit: 'Maintains species across landscape'
                     }
                   ].map((benefit, index) => (
                     <motion.div
                       key={index}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.3 }}
-                      className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 text-center hover:scale-105 transition-transform"
+                      transition={{ delay: index * 0.2 }}
+                      whileHover={{ scale: 1.05 }}
+                      className="bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20 text-center"
                     >
-                      <div className="text-4xl mb-4">{benefit.icon}</div>
-                      <h4 className="text-xl font-bold text-white mb-3">{benefit.title}</h4>
-                      <p className="text-white/90 mb-3">{benefit.description}</p>
-                      <div className="bg-purple-400/20 rounded-lg p-2 text-sm text-white/80">
-                        <strong>Benefit:</strong> {benefit.benefit}
+                      <div className="text-3xl mb-3">{benefit.icon}</div>
+                      <h4 className="text-lg font-bold text-white mb-2">{benefit.title}</h4>
+                      <p className="text-white/90 text-xs mb-2 leading-relaxed">
+                        {benefit.description}
+                      </p>
+                      <div className="bg-gradient-to-r from-yellow-400/20 to-orange-400/20 rounded-lg p-2">
+                        <p className="text-yellow-300 text-xs font-semibold">
+                          {benefit.benefit}
+                        </p>
                       </div>
                     </motion.div>
                   ))}
@@ -1239,6 +1196,124 @@ const App: React.FC = () => {
         );
 
       case 6:
+        return (
+          <div className="min-h-screen bg-gradient-to-br from-purple-600 to-pink-600 p-8 pb-16">
+            <div className="max-w-6xl mx-auto">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="slide-enter"
+              >
+                <h1 className="text-5xl font-bold text-white text-center mb-8">
+                  Metapopulation Examples & Conservation
+                </h1>
+
+                {/* Real-world examples */}
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 mb-8 border border-white/20">
+                  <h3 className="text-2xl font-bold text-white mb-6 text-center">🌍 Real-World Examples</h3>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <motion.div
+                      whileHover={{ scale: 1.02 }}
+                      className="bg-gradient-to-br from-green-400/20 to-blue-400/20 rounded-lg p-4 border border-white/20"
+                    >
+                      <h4 className="text-lg font-bold text-white mb-2">🦋 Butterfly Metapopulations</h4>
+                      <p className="text-white/90 text-sm mb-2">
+                        Checkerspot butterflies live in habitat patches connected by meadow corridors. 
+                        Local extinctions occur during harsh winters, but recolonization happens in spring.
+                      </p>
+                      <div className="text-xs text-yellow-300">
+                        <strong>Key Factor:</strong> Habitat fragmentation affects migration success
+                      </div>
+                    </motion.div>
+                    
+                    <motion.div
+                      whileHover={{ scale: 1.02 }}
+                      className="bg-gradient-to-br from-orange-400/20 to-red-400/20 rounded-lg p-4 border border-white/20"
+                    >
+                      <h4 className="text-lg font-bold text-white mb-2">🐨 Koala Populations</h4>
+                      <p className="text-white/90 text-sm mb-2">
+                        Koalas exist in fragmented eucalyptus forests. Road crossings and wildlife corridors 
+                        are crucial for maintaining gene flow between forest patches.
+                      </p>
+                      <div className="text-xs text-yellow-300">
+                        <strong>Conservation:</strong> Wildlife corridors prevent isolation
+                      </div>
+                    </motion.div>
+                    
+                    <motion.div
+                      whileHover={{ scale: 1.02 }}
+                      className="bg-gradient-to-br from-blue-400/20 to-teal-400/20 rounded-lg p-4 border border-white/20"
+                    >
+                      <h4 className="text-lg font-bold text-white mb-2">🐸 Pond Amphibians</h4>
+                      <p className="text-white/90 text-sm mb-2">
+                        Frogs and salamanders move between temporary ponds. Some ponds dry up (local extinction), 
+                        but adults migrate to establish new breeding populations.
+                      </p>
+                      <div className="text-xs text-yellow-300">
+                        <strong>Adaptation:</strong> Mobile adults enable recolonization
+                      </div>
+                    </motion.div>
+                    
+                    <motion.div
+                      whileHover={{ scale: 1.02 }}
+                      className="bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-lg p-4 border border-white/20"
+                    >
+                      <h4 className="text-lg font-bold text-white mb-2">🏝️ Island Birds</h4>
+                      <p className="text-white/90 text-sm mb-2">
+                        Seabirds nest on different islands but fly between them. Storm events may eliminate 
+                        colonies, but survivors from other islands can reestablish populations.
+                      </p>
+                      <div className="text-xs text-yellow-300">
+                        <strong>Resilience:</strong> Multiple sites reduce total extinction risk
+                      </div>
+                    </motion.div>
+                  </div>
+                </div>
+
+                {/* Conservation implications */}
+                <div className="bg-gradient-to-r from-red-400/20 to-pink-400/20 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                  <h3 className="text-2xl font-bold text-white mb-4 text-center">🚨 Conservation Implications</h3>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <h4 className="text-lg font-bold text-white mb-3">⚠️ Threats to Metapopulations</h4>
+                      <div className="space-y-2">
+                        {[
+                          'Habitat fragmentation reduces connectivity',
+                          'Climate change alters migration routes',
+                          'Urban development creates barriers',
+                          'Pollution affects multiple patches simultaneously'
+                        ].map((threat, index) => (
+                          <div key={index} className="flex items-start text-white/90 text-sm">
+                            <span className="mr-3 text-red-300 mt-1">•</span>
+                            {threat}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-bold text-white mb-3">✅ Conservation Strategies</h4>
+                      <div className="space-y-2">
+                        {[
+                          'Create wildlife corridors between patches',
+                          'Protect multiple habitat areas (portfolio approach)',
+                          'Restore degraded habitats to increase patch size',
+                          'Monitor and assist migration when needed'
+                        ].map((strategy, index) => (
+                          <div key={index} className="flex items-start text-white/90 text-sm">
+                            <span className="mr-3 text-green-300 mt-1">•</span>
+                            {strategy}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        );
+
+      case 7:
         return (
           <div className="min-h-screen bg-gradient-to-br from-teal-600 to-cyan-700 p-8">
             <div className="max-w-6xl mx-auto">
@@ -1256,7 +1331,7 @@ const App: React.FC = () => {
                   
                   {/* Community Interaction Image */}
                   <img 
-                    src="/src/assets/images/species-interaction.png"
+                    src="/images/species-interaction.png"
                     alt="Different species interacting in an ecological community"
                     className="rounded-lg mb-4 mx-auto w-80"
                   />
@@ -1309,7 +1384,7 @@ const App: React.FC = () => {
           </div>
         );
 
-      case 7:
+      case 8:
         return (
           <div className="min-h-screen bg-gradient-to-br from-orange-600 to-red-600 p-8">
             <div className="max-w-6xl mx-auto">
@@ -1327,7 +1402,7 @@ const App: React.FC = () => {
                   
                   {/* Predator-Prey Image */}
                   <img 
-                    src="/src/assets/images/predator-vs-prey.png"
+                    src="/images/predator-vs-prey.png"
                     alt="Predator-prey relationship showing evolutionary adaptations"
                     className="rounded-lg mb-4 mx-auto w-80"
                   />
@@ -1387,7 +1462,7 @@ const App: React.FC = () => {
           </div>
         );
 
-      case 8:
+      case 9:
         return (
           <div className="min-h-screen bg-gradient-to-br from-green-600 to-teal-600 p-8">
             <div className="max-w-6xl mx-auto">
@@ -1454,7 +1529,7 @@ const App: React.FC = () => {
           </div>
         );
 
-      case 9:
+      case 10:
         return (
           <div className="min-h-screen bg-gradient-to-br from-green-600 to-teal-600 p-8">
             <div className="max-w-6xl mx-auto">
@@ -1514,7 +1589,7 @@ const App: React.FC = () => {
           </div>
         );
 
-      case 10:
+      case 11:
         return (
           <div className="min-h-screen bg-gradient-to-br from-blue-600 to-indigo-700 p-8">
             <div className="max-w-6xl mx-auto">
@@ -1573,7 +1648,7 @@ const App: React.FC = () => {
           </div>
         );
 
-      case 11:
+      case 12:
         return (
           <div className="min-h-screen bg-gradient-to-br from-purple-600 to-indigo-700 p-8">
             <div className="max-w-4xl mx-auto">
@@ -1591,7 +1666,7 @@ const App: React.FC = () => {
           </div>
         );
 
-      case 12:
+      case 13:
         return (
           <div className="min-h-screen bg-gradient-to-br from-teal-600 to-cyan-700 p-8">
             <div className="max-w-4xl mx-auto">
@@ -1609,7 +1684,7 @@ const App: React.FC = () => {
           </div>
         );
 
-      case 13:
+      case 14:
         return (
           <div className="min-h-screen bg-gradient-to-br from-pink-600 to-purple-700 p-8">
             <div className="max-w-4xl mx-auto">
@@ -1627,7 +1702,7 @@ const App: React.FC = () => {
           </div>
         );
 
-      case 14:
+      case 15:
         return (
           <div className="min-h-screen bg-gradient-to-br from-indigo-600 to-blue-700 p-8">
             <div className="max-w-4xl mx-auto">
@@ -1645,7 +1720,7 @@ const App: React.FC = () => {
           </div>
         );
 
-      case 15:
+      case 16:
         return (
           <div className="min-h-screen bg-gradient-to-br from-green-600 to-blue-600 p-8">
             <div className="max-w-6xl mx-auto">
