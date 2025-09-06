@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Populations and Communities - Group 5</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="presentation-container">
+        <div class="slide-counter">
+            <span id="current-slide">1</span> / <span id="total-slides">19</span>
+        </div>
+
+        <!-- Navigation Controls -->
+        <div class="navigation">
+            <button class="btn btn--outline nav-btn" id="prev-btn" disabled>Previous</button>
+            <button class="btn btn--primary nav-btn" id="next-btn">Next</button>
+        </div>
+
+        <!-- Slide 1: Title Slide -->
+        <div class="slide active" data-slide="1">
+            <div class="slide-content title-slide">
+                <h1>Populations and Communities</h1>
+                <h2>Environmental Science Module: Populations and Communities Section</h2>
+                <div class="group-info">
+                    <h3>Group 5 Members</h3>
+                    <div class="members-grid">
+                        <div class="member">
+                            <strong>Member 1:</strong> Basic Definitions - Populations, Communities, Metapopulations
+                        </div>
+                        <div class="member">
+                            <strong>Member 2:</strong> Population Dynamics - Biotic and Abiotic Factors
+                        </div>
+                        <div class="member">
+                            <strong>Member 3:</strong> Community Interactions - Niches, Competition, Predator-Prey
+                        </div>
+                        <div class="member">
+                            <strong>Member 4:</strong> Population Measurement - Quadrat and Mark-Recapture Methods
+                        </div>
+                        <div class="member">
+                            <strong>Member 5:</strong> Applications and Examples - Real-World Conservation
+                        </div>
+                    </div>
+                </div>
+                <div class="course-info">
+                    <p>Environmental Science Course</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Introduction & Overview -->
+        <div class="slide" data-slide="2">
+            <div class="slide-content">
+                <h1>Introduction & Overview</h1>
+                <div class="definition-card">
+                    <h3>What We'll Learn Today</h3>
+                    <p>Understanding populations and communities based on the Environmental Science module text</p>
+                </div>
+                <div class="objectives-section">
+                    <h3>Learning Objectives</h3>
+                    <ul class="objectives-list">
+                        <li>Define populations, communities, and metapopulations</li>
+                        <li>Understand how populations respond to biotic and abiotic factors</li>
+                        <li>Explore community interactions: competition and predator-prey relationships</li>
+                        <li>Learn population measurement methods: quadrat and mark-recapture</li>
+                        <li>Apply concepts to real-world conservation examples</li>
+                    </ul>
+                </div>
+                <div class="preview-section">
+                    <h3>Why This Matters</h3>
+                    <p>Understanding populations and communities is fundamental to ecology and conservation biology. These concepts help us:</p>
+                    <div class="importance-grid">
+                        <div class="importance-item">Monitor species health</div>
+                        <div class="importance-item">Design protected areas</div>
+                        <div class="importance-item">Manage wildlife populations</div>
+                        <div class="importance-item">Understand ecosystem dynamics</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: What is a Population? -->
+        <div class="slide" data-slide="3">
+            <div class="slide-content">
+                <h1>What is a Population?</h1>
+                <h2>Member 1: Basic Definitions</h2>
+                <div class="definition-card main-definition">
+                    <h3>Population</h3>
+                    <p class="definition-text">"Group of individuals of the same species that inhabit a shared environment"</p>
+                    <p class="definition-source">- Environmental Science Module</p>
+                </div>
+                <div class="characteristics-section">
+                    <h3>Population Characteristics</h3>
+                    <div class="char-grid">
+                        <div class="char-item">
+                            <h4>Population Size (N)</h4>
+                            <p>The number of individuals in the population</p>
+                            <div class="example">Example: 250 wolves in Yellowstone National Park</div>
+                        </div>
+                        <div class="char-item">
+                            <h4>Population Density</h4>
+                            <p>The number of individuals in a given area</p>
+                            <div class="example">Example: 5 deer per square kilometer</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="visual-examples">
+                    <h3>Visual Examples</h3>
+                    <div class="population-examples">
+                        <div class="pop-example">🐺 All wolves in a forest</div>
+                        <div class="pop-example">🌳 All oak trees in a woodland</div>
+                        <div class="pop-example">🐟 All salmon in a river system</div>
+                        <div class="pop-example">🦅 All eagles in a territory</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Communities vs Populations -->
+        <div class="slide" data-slide="4">
+            <div class="slide-content">
+                <h1>Communities vs Populations</h1>
+                <h2>Member 1: Basic Definitions</h2>
+                <div class="comparison-section">
+                    <div class="comparison-card population-card">
+                        <h3>Population</h3>
+                        <p class="definition">Same species, shared environment</p>
+                        <div class="examples">
+                            <h4>Examples:</h4>
+                            <ul>
+                                <li>All rabbits in a meadow</li>
+                                <li>All pine trees on a hillside</li>
+                                <li>All bacteria in a petri dish</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="vs-divider">VS</div>
+                    <div class="comparison-card community-card">
+                        <h3>Community</h3>
+                        <p class="definition">"Multiple co-existing, interacting populations of different species"</p>
+                        <div class="examples">
+                            <h4>Examples:</h4>
+                            <ul>
+                                <li>Forest community: trees, deer, birds, insects</li>
+                                <li>Pond community: fish, frogs, plants, algae</li>
+                                <li>Grassland community: grasses, wildflowers, rodents, predators</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="species-richness">
+                    <h3>Species Richness</h3>
+                    <div class="richness-definition">
+                        <p><strong>Species Richness:</strong> The number of species in a community</p>
+                        <div class="richness-example">
+                            <p>A forest community might have:</p>
+                            <div class="richness-count">15 tree species + 25 bird species + 10 mammal species = <strong>50 species richness</strong></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Metapopulations -->
+        <div class="slide" data-slide="5">
+            <div class="slide-content">
+                <h1>Metapopulations</h1>
+                <h2>Member 1: Basic Definitions</h2>
+                <div class="definition-card main-definition">
+                    <h3>Metapopulation</h3>
+                    <p class="definition-text">"Multiple populations of the same species that occupy different areas"</p>
+                    <p class="definition-source">- Environmental Science Module</p>
+                </div>
+                <div class="metapop-diagram">
+                    <div class="population-patch occupied" data-patch="1">
+                        <span>Population A</span>
+                    </div>
+                    <div class="population-patch occupied" data-patch="2">
+                        <span>Population B</span>
+                    </div>
+                    <div class="population-patch occupied" data-patch="3">
+                        <span>Population C</span>
+                    </div>
+                    <div class="migration-arrows">
+                        <div class="arrow-label">Immigration & Emigration</div>
+                    </div>
+                </div>
+                <div class="benefits-section">
+                    <h3>Benefits of Immigration and Emigration</h3>
+                    <div class="benefits-grid">
+                        <div class="benefit-item">
+                            <h4>🧬 Genetic Diversity</h4>
+                            <p>Exchange ensures genetic diversity between populations</p>
+                        </div>
+                        <div class="benefit-item">
+                            <h4>🏔️ Resilience</h4>
+                            <p>Helps populations withstand harsh environments</p>
+                        </div>
+                        <div class="benefit-item">
+                            <h4>🔄 Adaptive Traits</h4>
+                            <p>Increases likelihood of adaptive traits emerging</p>
+                        </div>
+                        <div class="benefit-item">
+                            <h4>🛡️ Natural Selection</h4>
+                            <p>Supports natural selection processes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Populations are Dynamic -->
+        <div class="slide" data-slide="6">
+            <div class="slide-content">
+                <h1>Populations are Dynamic</h1>
+                <h2>Member 2: Population Dynamics</h2>
+                <div class="definition-card">
+                    <h3>Dynamic Nature of Populations</h3>
+                    <p>"A population continuously changes in response to both biotic (living) and abiotic (non-living) factors"</p>
+                    <p class="ecology-definition"><strong>Ecology:</strong> The biological study of how organisms interact with each other and their environment</p>
+                </div>
+                <div class="factors-overview">
+                    <div class="factor-category">
+                        <h3>🌱 Biotic Factors</h3>
+                        <p>Living environmental factors</p>
+                        <div class="factor-examples">
+                            <div class="factor">Predation</div>
+                            <div class="factor">Competition</div>
+                            <div class="factor">Disease</div>
+                            <div class="factor">Food availability</div>
+                        </div>
+                    </div>
+                    <div class="factor-category">
+                        <h3>🌍 Abiotic Factors</h3>
+                        <p>Non-living environmental factors</p>
+                        <div class="factor-examples">
+                            <div class="factor">Weather</div>
+                            <div class="factor">Elevation</div>
+                            <div class="factor">Latitude</div>
+                            <div class="factor">Soil composition</div>
+                            <div class="factor">Water composition</div>
+                            <div class="factor">Pollution</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Biotic vs Abiotic Factors -->
+        <div class="slide" data-slide="7">
+            <div class="slide-content">
+                <h1>Biotic vs Abiotic Factors</h1>
+                <h2>Member 2: Interactive Exploration</h2>
+                <div class="factors-interactive">
+                    <div class="factor-selector">
+                        <button class="btn btn--secondary factor-btn active" data-factor="biotic">Biotic Factors</button>
+                        <button class="btn btn--secondary factor-btn" data-factor="abiotic">Abiotic Factors</button>
+                    </div>
+                    <div class="factor-display">
+                        <div class="factor-content active" data-factor="biotic">
+                            <h3>🌱 Biotic (Living) Factors</h3>
+                            <div class="factor-grid">
+                                <div class="factor-card">
+                                    <h4>Predation</h4>
+                                    <p>Being hunted and eaten by other organisms</p>
+                                    <div class="example">Example: Wolves hunting deer</div>
+                                </div>
+                                <div class="factor-card">
+                                    <h4>Competition</h4>
+                                    <p>Competing with other organisms for resources</p>
+                                    <div class="example">Example: Plants competing for sunlight</div>
+                                </div>
+                                <div class="factor-card">
+                                    <h4>Disease</h4>
+                                    <p>Infections from pathogens and parasites</p>
+                                    <div class="example">Example: Fungal infections in trees</div>
+                                </div>
+                                <div class="factor-card">
+                                    <h4>Symbiosis</h4>
+                                    <p>Living relationships with other species</p>
+                                    <div class="example">Example: Pollinator-plant relationships</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="factor-content" data-factor="abiotic">
+                            <h3>🌍 Abiotic (Non-Living) Factors</h3>
+                            <div class="factor-grid">
+                                <div class="factor-card">
+                                    <h4>Weather</h4>
+                                    <p>Temperature, precipitation, storms</p>
+                                    <div class="example">Example: Drought affecting plant growth</div>
+                                </div>
+                                <div class="factor-card">
+                                    <h4>Elevation & Latitude</h4>
+                                    <p>Geographic position affecting climate</p>
+                                    <div class="example">Example: Alpine conditions at high elevation</div>
+                                </div>
+                                <div class="factor-card">
+                                    <h4>Soil & Water Composition</h4>
+                                    <p>Chemical makeup of environment</p>
+                                    <div class="example">Example: pH levels affecting plant species</div>
+                                </div>
+                                <div class="factor-card">
+                                    <h4>Pollution</h4>
+                                    <p>Chemical contamination of environment</p>
+                                    <div class="example">Example: Acid rain affecting forest health</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Genetic Diversity Benefits -->
+        <div class="slide" data-slide="8">
+            <div class="slide-content">
+                <h1>Genetic Diversity Benefits</h1>
+                <h2>Member 2: Immigration and Emigration</h2>
+                <div class="genetic-flow">
+                    <h3>How Population Movement Helps</h3>
+                    <div class="flow-diagram">
+                        <div class="flow-step">
+                            <div class="step-icon">🚶‍♂️</div>
+                            <h4>Immigration</h4>
+                            <p>Movement into an area</p>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <div class="step-icon">🧬</div>
+                            <h4>Genetic Exchange</h4>
+                            <p>New genetic material introduced</p>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <div class="step-icon">💪</div>
+                            <h4>Increased Resilience</h4>
+                            <p>Better survival in harsh conditions</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="benefits-detailed">
+                    <div class="benefit-card">
+                        <h3>🌡️ Unpredictable Environments</h3>
+                        <p>Genetic diversity helps populations survive when environmental conditions change unexpectedly</p>
+                        <div class="example">Example: Some individuals might be better adapted to drought conditions</div>
+                    </div>
+                    <div class="benefit-card">
+                        <h3>❄️ Harsh Conditions</h3>
+                        <p>Populations with more genetic diversity are more likely to have individuals that can survive extreme conditions</p>
+                        <div class="example">Example: Cold tolerance genes help during severe winters</div>
+                    </div>
+                    <div class="benefit-card">
+                        <h3>🔄 Natural Selection</h3>
+                        <p>Immigration and emigration increase the likelihood that adaptive (helpful) traits will emerge</p>
+                        <div class="example">Example: Disease resistance genes spread through populations</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Species Niches -->
+        <div class="slide" data-slide="9">
+            <div class="slide-content">
+                <h1>Species Niches</h1>
+                <h2>Member 3: Community Interactions</h2>
+                <div class="definition-card main-definition">
+                    <h3>Ecological Niche</h3>
+                    <p class="definition-text">"The combination of ways a species uses environmental resources and interacts with other community members"</p>
+                    <p class="analogy">Think of a niche as the "job" a species performs in its community</p>
+                </div>
+                <div class="niche-examples">
+                    <h3>Niche Examples</h3>
+                    <div class="niche-grid">
+                        <div class="niche-card">
+                            <div class="species-icon">🐝</div>
+                            <h4>Bee's Niche</h4>
+                            <p><strong>Job:</strong> Pollinator</p>
+                            <p><strong>Resources:</strong> Nectar, pollen</p>
+                            <p><strong>Interactions:</strong> Pollinate flowers, compete with other pollinators</p>
+                        </div>
+                        <div class="niche-card">
+                            <div class="species-icon">🦉</div>
+                            <h4>Owl's Niche</h4>
+                            <p><strong>Job:</strong> Nocturnal predator</p>
+                            <p><strong>Resources:</strong> Small mammals, nesting sites</p>
+                            <p><strong>Interactions:</strong> Hunt rodents, avoid larger predators</p>
+                        </div>
+                        <div class="niche-card">
+                            <div class="species-icon">🌳</div>
+                            <h4>Tree's Niche</h4>
+                            <p><strong>Job:</strong> Primary producer</p>
+                            <p><strong>Resources:</strong> Sunlight, water, nutrients</p>
+                            <p><strong>Interactions:</strong> Compete for space, provide habitat</p>
+                        </div>
+                        <div class="niche-card">
+                            <div class="species-icon">🐛</div>
+                            <h4>Decomposer's Niche</h4>
+                            <p><strong>Job:</strong> Break down dead material</p>
+                            <p><strong>Resources:</strong> Dead organic matter</p>
+                            <p><strong>Interactions:</strong> Recycle nutrients for plants</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Competition -->
+        <div class="slide" data-slide="10">
+            <div class="slide-content">
+                <h1>Competition</h1>
+                <h2>Member 3: When Niches Overlap</h2>
+                <div class="competition-intro">
+                    <h3>When Does Competition Occur?</h3>
+                    <p>Competition arises when species' niches overlap - when they need the same resources</p>
+                </div>
+                <div class="competition-example">
+                    <h3>Real Example from the Text</h3>
+                    <div class="example-card">
+                        <div class="species-comparison">
+                            <div class="species">
+                                <div class="species-icon">🐦</div>
+                                <h4>Bluebirds</h4>
+                                <p>Favor insectivorous diets and open areas with sparsely distributed trees</p>
+                            </div>
+                            <div class="vs">VS</div>
+                            <div class="species">
+                                <div class="species-icon">🪶</div>
+                                <h4>Woodpeckers</h4>
+                                <p>Favor insectivorous diets and open areas with sparsely distributed trees</p>
+                            </div>
+                        </div>
+                        <div class="competition-result">
+                            <h4>Result: Interspecific Competition</h4>
+                            <p>These two species compete for limited food and housing resources</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="competition-types">
+                    <h3>Types of Competition</h3>
+                    <div class="comp-types-grid">
+                        <div class="comp-type">
+                            <h4>Interspecific Competition</h4>
+                            <p>Between different species</p>
+                            <div class="example">Example: Bluebirds vs Woodpeckers</div>
+                        </div>
+                        <div class="comp-type">
+                            <h4>Intraspecific Competition</h4>
+                            <p>Within the same species</p>
+                            <div class="example">Example: Bluebirds competing with other bluebirds</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="solutions">
+                    <h3>Avoiding Competition</h3>
+                    <div class="solution-methods">
+                        <div class="method">Resource partitioning</div>
+                        <div class="method">Occupying different areas</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: Predator-Prey Relationships -->
+        <div class="slide" data-slide="11">
+            <div class="slide-content">
+                <h1>Predator-Prey Relationships</h1>
+                <h2>Member 3: Evolutionary Arms Race</h2>
+                <div class="arms-race-concept">
+                    <h3>The "Evolutionary Arms Race"</h3>
+                    <p>Predator-prey relationships resemble an evolutionary arms race where both sides keep evolving better adaptations</p>
+                </div>
+                <div class="example-section">
+                    <h3>Real Examples from the Text</h3>
+                    <div class="examples-grid">
+                        <div class="example-card prey-example">
+                            <h4>🦋 Prey Adaptation: Caligo Butterflies</h4>
+                            <div class="adaptation-details">
+                                <p><strong>Adaptation:</strong> Large eyespots on wings that resemble owl eyes</p>
+                                <p><strong>Function:</strong> Deter threatening predators</p>
+                                <p><strong>Result:</strong> Better survival rates</p>
+                            </div>
+                            <div class="visual-representation">
+                                <div class="butterfly-wing">👁️ 👁️</div>
+                                <p class="caption">Owl-like eyespots</p>
+                            </div>
+                        </div>
+                        <div class="example-card predator-example">
+                            <h4>🐆 Predator & Prey: Camouflage</h4>
+                            <div class="adaptation-details">
+                                <p><strong>Predators (leopards):</strong> Use camouflage to avoid detection by prey</p>
+                                <p><strong>Prey (deer):</strong> Use camouflage to avoid detection by predators</p>
+                                <p><strong>Result:</strong> Both sides evolve better camouflage</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="arms-race-cycle">
+                    <h3>The Cycle Continues</h3>
+                    <div class="cycle-diagram">
+                        <div class="cycle-step">
+                            <h4>1. Prey Develops Defense</h4>
+                            <p>Natural selection favors better defense mechanisms</p>
+                        </div>
+                        <div class="cycle-arrow">→</div>
+                        <div class="cycle-step">
+                            <h4>2. Predator Adapts</h4>
+                            <p>Predators evolve to overcome prey defenses</p>
+                        </div>
+                        <div class="cycle-arrow">→</div>
+                        <div class="cycle-step">
+                            <h4>3. Prey Counter-Adapts</h4>
+                            <p>Prey species develop new or better defenses</p>
+                        </div>
+                        <div class="cycle-arrow-back">↺</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: Why Measure Populations? -->
+        <div class="slide" data-slide="12">
+            <div class="slide-content">
+                <h1>Why Measure Populations?</h1>
+                <h2>Member 4: Population Measurement</h2>
+                <div class="measurement-importance">
+                    <h3>Populations are Characterized by Size and Density</h3>
+                    <div class="characteristics">
+                        <div class="char-definition">
+                            <h4>Population Size (N)</h4>
+                            <p>Simply the number of individuals</p>
+                        </div>
+                        <div class="char-definition">
+                            <h4>Population Density</h4>
+                            <p>The number of individuals in a given area</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="challenges-section">
+                    <h3>The Challenge of Counting</h3>
+                    <div class="challenge-card">
+                        <p>"Although counting individuals is the most accurate way to measure populations, it can be unfeasible in large habitats or for organisms that frequently move around"</p>
+                        <p class="source">- Environmental Science Module</p>
+                    </div>
+                    <div class="problems-grid">
+                        <div class="problem">
+                            <h4>🏔️ Large Habitats</h4>
+                            <p>Too big to count everything</p>
+                        </div>
+                        <div class="problem">
+                            <h4>🦎 Moving Animals</h4>
+                            <p>Animals that don't stay in one place</p>
+                        </div>
+                        <div class="problem">
+                            <h4>⏰ Time Constraints</h4>
+                            <p>Not enough time or resources</p>
+                        </div>
+                        <div class="problem">
+                            <h4>👁️ Hidden Organisms</h4>
+                            <p>Hard to see or find organisms</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="solution">
+                    <h3>The Solution: Sampling Methods</h3>
+                    <p>Researchers often employ sampling methods to infer the total population size</p>
+                    <div class="method-preview">
+                        <div class="method-icon">📏</div>
+                        <span>Quadrat Method</span>
+                        <div class="method-icon">🏷️</div>
+                        <span>Mark and Recapture Method</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 13: Quadrat Method -->
+        <div class="slide" data-slide="13">
+            <div class="slide-content">
+                <h1>Quadrat Method</h1>
+                <h2>Member 4: Measuring Plant Populations</h2>
+                <div class="method-definition">
+                    <h3>What is the Quadrat Method?</h3>
+                    <p class="definition-text">"This method involves partitioning several randomly distributed sections of habitat with markers, such as string or stakes, and counting the individuals in each quadrat"</p>
+                </div>
+                <div class="method-details">
+                    <h3>Best For</h3>
+                    <div class="best-for-list">
+                        <div class="organism-type">🌱 Plants</div>
+                        <div class="organism-type">🐌 Very small organisms</div>
+                        <div class="organism-type">🦎 Slow-moving organisms</div>
+                    </div>
+                </div>
+                <div class="interactive-demo">
+                    <h3>Interactive Quadrat Placement</h3>
+                    <div class="quadrat-simulation">
+                        <div class="habitat-area" id="habitat-area">
+                            <div class="quadrat-frame" style="left: 10%; top: 15%;"></div>
+                            <div class="quadrat-frame" style="left: 60%; top: 25%;"></div>
+                            <div class="quadrat-frame" style="left: 30%; top: 65%;"></div>
+                            <div class="quadrat-frame" style="left: 75%; top: 70%;"></div>
+                        </div>
+                        <button class="btn btn--primary" id="place-quadrat-btn">Place Random Quadrat</button>
+                        <button class="btn btn--secondary" id="count-organisms-btn">Count Organisms</button>
+                    </div>
+                    <div class="count-display">
+                        <div class="count-result">
+                            <span id="organism-count">0</span> organisms found
+                        </div>
+                        <div class="density-calculation">
+                            Density = <span id="density-calc">0</span> organisms per quadrat
+                        </div>
+                    </div>
+                </div>
+                <div class="procedure-steps">
+                    <h3>Procedure Steps</h3>
+                    <ol class="steps-list">
+                        <li>Mark off square areas with stakes and string</li>
+                        <li>Place quadrats randomly in the habitat</li>
+                        <li>Count individuals within each quadrat boundary</li>
+                        <li>Use multiple samples for accuracy</li>
+                        <li>Calculate population estimates</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 14: Mark and Recapture Method -->
+        <div class="slide" data-slide="14">
+            <div class="slide-content">
+                <h1>Mark and Recapture Method</h1>
+                <h2>Member 4: Measuring Mobile Animals</h2>
+                <div class="method-definition">
+                    <h3>What is Mark and Recapture?</h3>
+                    <p class="definition-text">"First, a random sample of individuals from a habitat are captured, marked (e.g., with tags, paints, or bands) and re-released. At a later date, a second random sample is captured, which includes some of the marked animals from the first sample."</p>
+                </div>
+                <div class="method-details">
+                    <h3>Best For</h3>
+                    <div class="best-for-list">
+                        <div class="organism-type">🐦 Birds</div>
+                        <div class="organism-type">🐟 Fish</div>
+                        <div class="organism-type">🦌 Mammals</div>
+                    </div>
+                </div>
+                <div class="formula-section">
+                    <h3>The Lincoln-Petersen Formula</h3>
+                    <div class="formula-card">
+                        <div class="formula-display">N = (M × C) / R</div>
+                        <div class="variables">
+                            <div class="variable"><strong>N</strong> = Population estimate</div>
+                            <div class="variable"><strong>M</strong> = Number marked in first sample</div>
+                            <div class="variable"><strong>C</strong> = Number caught in second sample</div>
+                            <div class="variable"><strong>R</strong> = Number of marked individuals recaptured</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="interactive-calculation">
+                    <h3>Interactive Calculation Tool</h3>
+                    <div class="calculator">
+                        <div class="input-group">
+                            <label for="marked-first">Marked in first sample (M):</label>
+                            <input type="number" id="marked-first" value="50" min="1">
+                        </div>
+                        <div class="input-group">
+                            <label for="caught-second">Caught in second sample (C):</label>
+                            <input type="number" id="caught-second" value="40" min="1">
+                        </div>
+                        <div class="input-group">
+                            <label for="recaptured">Marked individuals recaptured (R):</label>
+                            <input type="number" id="recaptured" value="8" min="1">
+                        </div>
+                        <button class="btn btn--primary" id="calculate-population">Calculate Population</button>
+                        <div class="result-display">
+                            <div class="calculation-steps">
+                                <div>N = (<span id="m-display">50</span> × <span id="c-display">40</span>) / <span id="r-display">8</span></div>
+                                <div>N = <span id="numerator">2000</span> / <span id="denominator">8</span></div>
+                                <div class="final-result">N = <span id="final-result">250</span> individuals</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="assumptions">
+                    <h3>Important Assumptions</h3>
+                    <div class="assumptions-list">
+                        <div class="assumption">Equal capture probability for marked and unmarked animals</div>
+                        <div class="assumption">No animals died, were born, or moved between time points</div>
+                        <div class="assumption">Marks don't affect animal behavior or survival</div>
+                        <div class="assumption">Marked animals mix back into the population</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 15: Real-World Applications -->
+        <div class="slide" data-slide="15">
+            <div class="slide-content">
+                <h1>Real-World Applications</h1>
+                <h2>Member 5: Conservation and Management</h2>
+                <div class="applications-overview">
+                    <h3>How These Concepts Are Used</h3>
+                    <div class="applications-grid">
+                        <div class="application-card">
+                            <div class="app-icon">🏞️</div>
+                            <h4>Conservation Biology</h4>
+                            <p>Understanding population dynamics helps design effective conservation strategies</p>
+                            <div class="examples">
+                                <span>• Protected area design</span>
+                                <span>• Species monitoring</span>
+                                <span>• Habitat restoration</span>
+                            </div>
+                        </div>
+                        <div class="application-card">
+                            <div class="app-icon">🦌</div>
+                            <h4>Wildlife Management</h4>
+                            <p>Population measurement methods help track species health and set hunting quotas</p>
+                            <div class="examples">
+                                <span>• Census surveys</span>
+                                <span>• Population monitoring</span>
+                                <span>• Sustainable harvesting</span>
+                            </div>
+                        </div>
+                        <div class="application-card">
+                            <div class="app-icon">🌍</div>
+                            <h4>Environmental Monitoring</h4>
+                            <p>Community interactions reveal ecosystem health and environmental changes</p>
+                            <div class="examples">
+                                <span>• Ecosystem indicators</span>
+                                <span>• Pollution effects</span>
+                                <span>• Climate change impacts</span>
+                            </div>
+                        </div>
+                        <div class="application-card">
+                            <div class="app-icon">🏙️</div>
+                            <h4>Urban Planning</h4>
+                            <p>Understanding metapopulations helps design wildlife corridors in developed areas</p>
+                            <div class="examples">
+                                <span>• Green corridors</span>
+                                <span>• Urban biodiversity</span>
+                                <span>• Development planning</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="importance-section">
+                    <h3>Why This Matters for Environmental Science</h3>
+                    <div class="importance-points">
+                        <div class="point">
+                            <h4>🔬 Scientific Foundation</h4>
+                            <p>Provides the basic understanding needed for all ecological research</p>
+                        </div>
+                        <div class="point">
+                            <h4>📊 Evidence-Based Decisions</h4>
+                            <p>Measurement methods provide data for conservation and management decisions</p>
+                        </div>
+                        <div class="point">
+                            <h4>🌱 Biodiversity Protection</h4>
+                            <p>Understanding communities helps protect ecosystem diversity</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 16: Case Study Examples -->
+        <div class="slide" data-slide="16">
+            <div class="slide-content">
+                <h1>Case Study Examples</h1>
+                <h2>Member 5: Success Stories</h2>
+                <div class="case-studies">
+                    <div class="case-study">
+                        <h3>🐺 Wolf Population Recovery</h3>
+                        <div class="case-details">
+                            <div class="case-background">
+                                <h4>Application of Concepts:</h4>
+                                <p>Mark-recapture methods used to monitor wolf populations after reintroduction</p>
+                            </div>
+                            <div class="case-outcomes">
+                                <h4>Results:</h4>
+                                <ul>
+                                    <li>Accurate population size estimates</li>
+                                    <li>Understanding of metapopulation dynamics</li>
+                                    <li>Evidence of predator-prey relationships</li>
+                                    <li>Successful conservation planning</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="case-study">
+                        <h3>🌲 Forest Biodiversity Assessment</h3>
+                        <div class="case-details">
+                            <div class="case-background">
+                                <h4>Application of Concepts:</h4>
+                                <p>Quadrat sampling used to measure plant species richness and community composition</p>
+                            </div>
+                            <div class="case-outcomes">
+                                <h4>Results:</h4>
+                                <ul>
+                                    <li>Species richness mapping</li>
+                                    <li>Community structure understanding</li>
+                                    <li>Habitat quality assessment</li>
+                                    <li>Conservation priority areas identified</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="case-study">
+                        <h3>🦋 Butterfly Corridor Design</h3>
+                        <div class="case-details">
+                            <div class="case-background">
+                                <h4>Application of Concepts:</h4>
+                                <p>Metapopulation theory applied to design habitat corridors for butterfly species</p>
+                            </div>
+                            <div class="case-outcomes">
+                                <h4>Results:</h4>
+                                <ul>
+                                    <li>Genetic diversity maintained</li>
+                                    <li>Population resilience improved</li>
+                                    <li>Successful recolonization of habitats</li>
+                                    <li>Adaptive management strategies developed</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="measurement-in-action">
+                    <h3>Population Measurement Methods in Action</h3>
+                    <div class="methods-comparison">
+                        <div class="method-success">
+                            <h4>📏 Quadrat Method Success</h4>
+                            <p>Used in grassland restoration projects to track plant population recovery and measure species diversity changes over time</p>
+                        </div>
+                        <div class="method-success">
+                            <h4>🏷️ Mark-Recapture Success</h4>
+                            <p>Essential for bird migration studies and fish population management, providing accurate population estimates for conservation planning</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 17: Importance for Environmental Science -->
+        <div class="slide" data-slide="17">
+            <div class="slide-content">
+                <h1>Importance for Environmental Science</h1>
+                <h2>Member 5: Broader Connections</h2>
+                <div class="connections-overview">
+                    <h3>How Populations and Communities Connect to Environmental Issues</h3>
+                    <div class="connection-web">
+                        <div class="central-concept">
+                            <h4>Populations & Communities</h4>
+                        </div>
+                        <div class="connection-lines">
+                            <div class="connection climate-change">
+                                <h4>🌡️ Climate Change</h4>
+                                <p>Population responses to changing conditions, range shifts, community composition changes</p>
+                            </div>
+                            <div class="connection biodiversity">
+                                <h4>🌿 Biodiversity Loss</h4>
+                                <p>Understanding community interactions helps predict extinction risks and design protection strategies</p>
+                            </div>
+                            <div class="connection pollution">
+                                <h4>🏭 Pollution Effects</h4>
+                                <p>Population monitoring reveals environmental health, community changes indicate ecosystem stress</p>
+                            </div>
+                            <div class="connection habitat-loss">
+                                <h4>🏘️ Habitat Loss</h4>
+                                <p>Metapopulation theory guides corridor design, fragmentation impacts on genetic diversity</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="future-applications">
+                    <h3>Future Environmental Challenges</h3>
+                    <div class="challenges-grid">
+                        <div class="challenge-item">
+                            <h4>🌊 Ocean Acidification</h4>
+                            <p>Marine communities face changing conditions - population dynamics help predict ecosystem responses</p>
+                        </div>
+                        <div class="challenge-item">
+                            <h4>🏙️ Urban Expansion</h4>
+                            <p>Growing cities fragment habitats - metapopulation concepts guide urban wildlife management</p>
+                        </div>
+                        <div class="challenge-item">
+                            <h4>👽 Invasive Species</h4>
+                            <p>Competition principles help predict and manage species invasions in changing environments</p>
+                        </div>
+                        <div class="challenge-item">
+                            <h4>🔄 Ecosystem Restoration</h4>
+                            <p>Population measurement methods track restoration success and community recovery</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tools-for-future">
+                    <h3>Tools for Future Environmental Scientists</h3>
+                    <div class="tools-list">
+                        <div class="tool">
+                            <span class="tool-name">Population Modeling:</span>
+                            <span>Predicting species responses to environmental change</span>
+                        </div>
+                        <div class="tool">
+                            <span class="tool-name">Community Analysis:</span>
+                            <span>Assessing ecosystem health and function</span>
+                        </div>
+                        <div class="tool">
+                            <span class="tool-name">Conservation Planning:</span>
+                            <span>Designing effective protection strategies</span>
+                        </div>
+                        <div class="tool">
+                            <span class="tool-name">Environmental Monitoring:</span>
+                            <span>Tracking changes over time and space</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 18: Conclusion -->
+        <div class="slide" data-slide="18">
+            <div class="slide-content">
+                <h1>Conclusion</h1>
+                <div class="conclusion-section">
+                    <div class="key-concepts">
+                        <h3>Summary of Key Concepts</h3>
+                        <div class="concept-summary">
+                            <div class="summary-item">
+                                <h4>🎯 Populations</h4>
+                                <p>Groups of the same species in shared environments, characterized by size and density</p>
+                            </div>
+                            <div class="summary-item">
+                                <h4>🌍 Communities</h4>
+                                <p>Multiple species populations interacting, with species richness as a key measure</p>
+                            </div>
+                            <div class="summary-item">
+                                <h4>🔄 Metapopulations</h4>
+                                <p>Connected populations with immigration/emigration providing genetic diversity and resilience</p>
+                            </div>
+                            <div class="summary-item">
+                                <h4>⚡ Dynamic Nature</h4>
+                                <p>Populations constantly change in response to biotic and abiotic factors</p>
+                            </div>
+                            <div class="summary-item">
+                                <h4>⚔️ Interactions</h4>
+                                <p>Competition when niches overlap, predator-prey evolutionary arms races</p>
+                            </div>
+                            <div class="summary-item">
+                                <h4>📊 Measurement</h4>
+                                <p>Quadrat method for plants/slow organisms, mark-recapture for mobile animals</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="connections">
+                        <h3>How It All Connects</h3>
+                        <div class="connection-flow">
+                            <div class="flow-item">Populations exist within communities</div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-item">Communities contain interacting species</div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-item">Interactions shape population dynamics</div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-item">Measurement methods help us understand it all</div>
+                        </div>
+                    </div>
+                    <div class="real-world-importance">
+                        <h3>Real-World Importance</h3>
+                        <p class="importance-statement">
+                            Understanding populations and communities provides the foundation for conservation biology, 
+                            wildlife management, and environmental protection. These concepts from the Environmental Science 
+                            module help us make informed decisions about protecting biodiversity and managing natural resources.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 19: Questions & Discussion -->
+        <div class="slide" data-slide="19">
+            <div class="slide-content final-slide">
+                <h1>Questions & Discussion</h1>
+                <div class="thank-you-section">
+                    <h2>Thank You!</h2>
+                    <p>Populations and Communities</p>
+                    <p class="subtitle">Environmental Science Module Presentation</p>
+                </div>
+                <div class="contact-info">
+                    <h3>Group 5 Contact Information</h3>
+                    <div class="member-contacts">
+                        <div class="contact-item">
+                            <strong>Member 1:</strong> Basic Definitions - Populations, Communities, Metapopulations
+                        </div>
+                        <div class="contact-item">
+                            <strong>Member 2:</strong> Population Dynamics - Biotic and Abiotic Factors
+                        </div>
+                        <div class="contact-item">
+                            <strong>Member 3:</strong> Community Interactions - Niches, Competition, Predator-Prey
+                        </div>
+                        <div class="contact-item">
+                            <strong>Member 4:</strong> Population Measurement - Quadrat and Mark-Recapture Methods
+                        </div>
+                        <div class="contact-item">
+                            <strong>Member 5:</strong> Applications and Examples - Real-World Conservation
+                        </div>
+                    </div>
+                </div>
+                <div class="discussion-prompts">
+                    <h3>Discussion Questions</h3>
+                    <ul>
+                        <li>How might climate change affect the genetic diversity benefits of immigration and emigration?</li>
+                        <li>What are the limitations of the quadrat and mark-recapture methods we discussed?</li>
+                        <li>Can you think of examples of interspecific competition in your local environment?</li>
+                        <li>How do predator-prey "arms races" lead to biodiversity?</li>
+                        <li>What role do metapopulations play in conservation planning?</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+/* Custom animations for presentation */
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.slide-enter {
+  animation: fadeInSlide 0.6s ease-out;
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+.pulse-animation {
+  animation: pulse-subtle 2s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Focus styles for accessibility */
+button:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 2px;
+}
+
+/* Responsive design improvements */
+@media (max-width: 768px) {
+  .slide-enter h1 {
+    font-size: 2.5rem !important;
+  }
+  
+  .slide-enter h2 {
+    font-size: 1.5rem !important;
+  }
+  
+  .slide-enter h3 {
+    font-size: 1.25rem !important;
+  }
+  
+  .slide-enter p {
+    font-size: 0.875rem !important;
+  }
+  
+  /* Adjust slide counter position on mobile */
+  .fixed.top-6.right-6 {
+    top: 1rem !important;
+    right: 1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide-enter h1 {
+    font-size: 2rem !important;
+  }
+  
+  .slide-enter .grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Improved contrast for better accessibility */
+.bg-white\/10 {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.text-white\/90 {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.text-white\/80 {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .bg-white\/10 {
+    background-color: rgba(255, 255, 255, 0.25) !important;
+    border: 2px solid rgba(255, 255, 255, 0.5) !important;
+  }
+  
+  .text-white\/90,
+  .text-white\/80 {
+    color: rgba(255, 255, 255, 1) !important;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .slide-enter {
+    animation: none;
+  }
+  
+  .float-animation,
+  .pulse-animation {
+    animation: none;
+  }
+  
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
