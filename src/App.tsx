@@ -30,7 +30,7 @@ const promptQuestions: PromptQuestion[] = [
   {
     question: "How do you think scientists count animals that move around a lot?",
     context: "Imagine trying to count birds or fish - what challenges would you face?",
-    slideNumber: 8
+    slideNumber: 9
   },
   {
     question: "What are some advantages of having multiple separate populations of the same species?",
